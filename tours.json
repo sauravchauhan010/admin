@@ -1,0 +1,5 @@
+[
+  { "name": "Dubai Desert Safari", "price": 70, "availability": 18, "enabled": true },
+  { "name": "Dubai City Tour", "price": 55, "availability": 20, "enabled": true },
+  { "name": "Dhow Cruise Dinner", "price": 60, "availability": 20, "enabled": true }
+]
