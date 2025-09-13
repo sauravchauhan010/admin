@@ -1,0 +1,7 @@
+[
+  {"name": "Dubai Desert Safari", "price": 70, "availability": 18, "enabled": true},
+  {"name": "Dubai City Tour", "price": 55, "availability": 20, "enabled": true},
+  {"name": "Dhow Cruise Dinner", "price": 60, "availability": 20, "enabled": true},
+  {"name": "Abu Dhabi City Tour", "price": 80, "availability": 15, "enabled": true},
+  {"name": "Ferrari World Abu Dhabi", "price": 95, "availability": 10, "enabled": true}, 
+]
