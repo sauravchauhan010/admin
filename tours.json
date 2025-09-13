@@ -1,5 +1,4 @@
 [
-  
-  { "name": "Burj Khalifa VIP Tour", "price": 95, "availability": 30 },
-  { "name": "Abu Dhabi City Tour", "price": 70, "availability": 20 }
+  { "name": "Dubai Desert Safari", "price": 70, "availability": 18, "enabled": true },
+  { "name": "Dubai City Tour", "price": 55, "availability": 20, "enabled": true }
 ]
