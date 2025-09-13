@@ -1,5 +1,5 @@
 [
-  {"name": " Desert Safari", "price": 70, "availability": 18, "enabled": true},
+  {"name": "dubai esert Safari", "price": 70, "availability": 18, "enabled": true},
   {"name": "Dubai City Tour", "price": 55, "availability": 20, "enabled": true},
   {"name": "Dhow Cruise Dinner", "price": 60, "availability": 20, "enabled": true},
   {"name": "Abu Dhabi City Tour", "price": 80, "availability": 15, "enabled": true},
