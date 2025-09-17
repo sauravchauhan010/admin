@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>API GET Request with Filters Demo</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  label { margin-right: 10px; }
+  input, select { margin-right: 20px; }
+  #results { margin-top: 20px; white-space: pre-wrap; background: #f4f4f4; padding: 10px; }
+</style>
+</head>
+<body>
+
+<h2>Get Items with Filters</h2>
+
+<form id="filterForm">
+  <label>
+    Category:
+    <select name="category">
+      <option value="">--Any--</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <option value="books">Books</option>
+    </select>
+  </label>
+
+  <label>
+    Min Price:
+    <input type="number" name="price_min" min="0" />
+  </label>
+
+  <label>
+    Max Price:
+    <input type="number" name="price_max" min="0" />
+  </label>
+
+  <label>
+    Sort:
+    <select name="sort">
+      <option value="">--None--</option>
+      <option value="price_asc">Price Ascending</option>
+      <option value="price_desc">Price Descending</option>
+      <option value="name_asc">Name Ascending</option>
+    </select>
+  </label>
+
+  <button type="submit">Fetch Items</button>
+</form>
+
+<div id="results">Results will appear here...</div>
+
+<script>
+  const form = document.getElementById('filterForm');
+  const resultsDiv = document.getElementById('results');
+  const apiUrl = 'https://script.google.com/macros/s/AKfycbziy7IzFwxuPPRIO2LDi5U9D_YJRjpEGHoTiWOHbs73eIZKMuXK08q6NycsRXLJRvBxfg/exec'; // Replace with your real API endpoint
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Get form values
+    const formData = new FormData(form);
+    const params = new URLSearchParams();
+
+    for (const [key, value] of formData.entries()) {
+      if (value) { // Only add if value is not empty
+        params.append(key, value);
+      }
+    }
+
+    try {
+      resultsDiv.textContent = 'Loading...';
+
+      const response = await fetch(`${apiUrl}?${params.toString()}`);
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      // Show the JSON response prettified
+      resultsDiv.textContent = JSON.stringify(data, null, 2);
+
+    } catch (error) {
+      resultsDiv.textContent = `Failed to fetch data: ${error.message}`;
+    }
+  });
+</script>
+
+</body>
+</html>
